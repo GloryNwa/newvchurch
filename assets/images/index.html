@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpoceans">
+
+    <meta name="keywords" content="church, online church,virtual church,god,pastor chris,christ embassy,evangelism,cyber evangelism,online church services" />
+    <meta name="IMM" content="Church" />
+
+    <meta property="og:image" content="assets/images/vcp_splash.png" />
+    <meta property="og:title" content="VCP - Watch live services" />
+    <meta property="og:type" content="website" />
+
+    <title>Watch Live!</title>
+    <!-- Favicon and Touch Icons -->
+    <link href="assets/images/favicon.png" rel="shortcut icon" type="image/png">
+
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/compiled/flipclock.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+
+
+
+    <style>.centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }</style>
+
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<style>
+    .video-js-responsive-container.vjs-hd {
+        padding-top: 56.25%;
+    }
+    .video-js-responsive-container.vjs-sd {
+        padding-top: 75%;
+    }
+    .video-js-responsive-container {
+        width: 100%;
+        position: relative;
+    }
+    .video-js-responsive-container .video-js {
+        height: 100% !important;
+        width: 100% !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+        <!-- end preloader -->
+        <!-- Start header -->
+        <header id="header" class="wpo-site-header wpo-header-style-3">
+            <div class="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-md-6 col-sm-7 col-12">
+                            <div class="contact-intro">
+                                <ul>
+                                    <!--<li><i class="fi flaticon-call"></i>+234 818 905 2626</li>-->
+                                    <!--<li><i class="fi flaticon-envelope"></i> admin@loveworld360.com</li>-->
+                                    <li><i class="fi flaticon-user"></i> Hello <span id="full_name"></span> |
+                                        <span class="church_name"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-md-6 col-sm-5 col-12">
+                            <div class="contact-info" >
+                                <ul id="contact-info">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end topbar -->
+
+        </header>
+        <!-- end of header -->
+        <!-- .wpo-breadcumb-area start -->
+        <div class="wpo-breadcumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="wpo-breadcumb-wrap">
+                            <h2>Watch Live!</h2>
+                            <!--<ul>-->
+                                <!--<li><a href="index.html">Home</a></li>-->
+                                <!--<li><span>About</span></li>-->
+                            <!--</ul>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .wpo-breadcumb-area end -->
+        <!-- wpo-about-video-area start -->
+        <div class="wpo-about-video-area">
+            <div class="container">
+
+
+
+
+                        <div class="row">
+
+                            <div id="multi-video-div" >
+
+
+                            </div>
+
+                            <div class="col-md-9 col-md-offset-3" id="multi-video" >
+
+
+                            </div>
+                            </div>
+                <div class="row">
+
+
+ <div class="col-md-9 col-md-offset-3" id="upcoming-video" >
+
+
+     <div id="clock-div" style="display: none;" align="left">
+         Next Event:
+         <br />
+         <br />
+
+         <div class="alert alert-info" ><h4> <span id="meeting_title"></span></h4></div>
+         <h2 style="" align="left">Starts In:</h2>
+         <br />
+         <br />
+         <div class="clock" style="width:100%;"></div>
+     </div>
+
+
+                            </div>
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="pull-right">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="wpo-ne-footer">
+            <!-- start wpo-site-footer -->
+            <footer class="wpo-site-footer">
+                <div class="wpo-lower-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-xs-12">
+                                <a href="/change-church.html"><p class="btn btn-warning">Change Church</p></a></div>
+                            </div>
+                            <div class="col col-xs-12">
+                                <p class="copyright">&copy; 2020 Christ Embassy. All Rights Reserved ver1.1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end wpo-site-footer -->
+        </div>
+
+    <script>
+
+    </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106770506-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-106770506-2');
+</script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+
+
+    </script>
+
+
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/compiled/flipclock.js"></script>
+    <script src="https://vjs.zencdn.net/7.3.0/video.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Plugins for this template -->
+    <script src="assets/js/jquery-plugin-collection.js"></script>
+    <!-- Custom script for this template -->
+    <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+    <script src="assets/js/notify.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="assets/js/gathering.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+
+
+<!--     Service details script starts here -->
+
+<script>
+      serviceDetails();
+
+      function serviceDetails(){
+
+
+          $("meetingName").html("");
+         // NProgress.start();
+
+          var userData = JSON.parse(localStorage.getItem('authuser'));
+          var offline = '<li><a href="/login">Login</a></li> <li><a href="/register">Sign Up</a></li><li><a ' +
+              'class="theme-btn">Next Service</a></li>'
+
+          var online = '<li class="theme-btn btn-info" style="background-color:#062265;"><a href="/" target="_blank" style=" padding: 7px 20px;margin-top: 9px; color:white;text-align: ' +
+              'center">Service</a></li>' +
+              '<li class="theme-btn btn-info"><a href="https://adm.cevirtualchurch.org/admin-login" target="_blank" style="color:white;text-align: ' +
+              'center">Admin Section</a></li><li class="theme-btn" id="logout-btn"><a href="#" onclick="logout()" style="color:white;text-align: ' +
+              'center">Logout</a>'
+          //logout a user
+
+          //check if a user is logged in or not
+          if(userData != null && userData!=""){
+
+            //  alert("i am logged in")
+              $("#contact-info").html(online)
+          }else{
+              window.location.href="/login.html"
+              // $("#contact-info").html(offline)
+          }
+
+
+          //get church video data
+          var church_id = userData.user.userDetails.churchID;
+          var full_name = userData.user.userDetails.firstName+" "+userData.user.userDetails.lastName;
+          var church_name = userData.user.userDetails.churchName;
+          var email = userData.user.userDetails.emailAddress;
+
+          $("#full_name").html(full_name);
+          $(".church_name").html(church_name);
+
+
+
+          var formData = {
+
+                  'churchID'  : church_id,
+                  'email'     : userData.user.userDetails.emailAddress,
+              };
+
+              $.ajax({
+                  type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                  url         : 'https://api.cevirtualchurch.org/services/multipleservices', // the url where we want to POST
+                  data        : formData,
+                  dataType    : 'json', // what type of data do we expect back from the server
+                  encode          : true
+              })
+
+              //
+              // using the done promise callback
+                  .done(function(data) {
+
+                      if(data.status) {
+
+                          var obj = "";
+
+                          for ( var i = 0; i < data.data.meetingDetails.length; i++ ) {
+                              obj += '<div class="col-md-4"><div style="margin-top:20px;border-line:2px;border-color: #fff;!important;background-color:#011b57;padding:10px;border-radius:7px;"> <a href="/video.html?meeting_id='+data.data.meetingDetails[i].meetingID+'"><img style=" filter: brightness(0%);" src="/assets/images/members.png" alt=""><h4 style="color: #fff;!important"> '+data.data.meetingDetails[i].meetingName+'</h4><p style="color: #fff;!important"> </p><div class="centered" align="center"><img style="max-width:40%;margin-bottom: 30%;" src="/assets/images/play-button.png" onclick=""  ></a> </div></div></div>';
+                          }
+
+
+                          console.log(obj)
+
+
+                          $("#multi-video-div").html(obj);
+                      }else{
+
+                          $("#multi-video").html('<div class="col-md-12 alert "><h2>No live stream at the moment</h2></div>');
+                      }
+                  })};
+  </script>
+
+
+
+
+<script>
+    serviceDetails2();
+    function serviceDetails2() {
+
+
+        $("meetingName").html("");
+
+        NProgress.start();
+
+        var userData = JSON.parse(localStorage.getItem('authuser'));
+
+
+
+        //logout a user
+
+
+
+
+        //get church video data
+        var church_id = userData.user.userDetails.churchID;
+        var full_name = userData.user.userDetails.firstName + " " + userData.user.userDetails.lastName;
+        var church_name = userData.user.userDetails.churchName;
+
+
+        $("#full_name").html(full_name);
+        $(".church_name").html(church_name);
+
+//        var formData = {
+//            'meetingID': meetingID,
+//        };
+
+
+        var formData = {
+            'churchID'     : church_id,
+            'email'     : userData.user.userDetails.emailAddress,
+        };
+
+
+        $.ajax({
+            type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url: 'https://api.cevirtualchurch.org/services/live', // the url where we want to POST
+            data: formData,
+            dataType: 'json', // what type of data do we expect back from the server
+            encode: true
+        })
+
+        //
+        // using the done promise callback
+            .done(function (data) {
+
+                console.log(data);
+                // alert("I dididid")
+                // log data to the console so we can see
+                // console.log("I got here too just now");
+
+                const datar = data.data.paymentDetails;
+
+
+                localStorage.setItem('paymentdetails', JSON.stringify(datar));
+
+
+                //check for card payment
+
+//
+//
+                if (data.status) {
+
+
+
+                    $("#upcoming-video").html('<div class="col-md-12 alert "><h2>No Upcoming events at the moment</h2></div>');
+
+
+                    const datar = data.data.paymentDetails;
+
+
+                    localStorage.setItem('paymentdetails', JSON.stringify(datar));
+
+                    // console.log(data.data.meetingDetails.meetingName)
+
+
+
+                    NProgress.done();
+
+
+                } else {
+
+                    NProgress.done();
+
+                    if (data.data.nextMeetingDetails != null) {
+
+                        $("#meeting_title").html(data.data.nextMeetingDetails.meetingName)
+                        var clock;
+
+                        var tts = Math.round(new Date().getTime() / 1000);
+
+                        var schtime = data.data.nextMeetingDetails.startTime;
+
+
+                        if (schtime > tts) {
+                            var meeting_time = schtime - tts;
+                        } else {
+                            var meeting_time = 0;
+                        }
+
+                        //var meeting_time = schtime - tts;
+                        //1587168000
+                        // console.log(meeting_time);
+
+                        $(document).ready(function () {
+                            var clock;
+
+                            clock = $('.clock').FlipClock({
+                                clockFace: 'DailyCounter',
+                                autoStart: false,
+                                callbacks: {
+                                    stop: function () {
+                                        $.notify("Service starts now, please refresh this page", {
+                                            className: 'success', autoHide: true,
+                                        });
+
+                                        serviceDetails();
+
+                                    }
+                                }
+                            });
+
+                            clock.setTime(meeting_time);
+                            clock.setCountdown(true);
+                            clock.start();
+
+                        });
+
+
+                        $("#video-div").html('');
+                        $("#clock-div").show(1000);
+                    } else {
+                        $("#video-div").html("<div style='margin-top:100px' class='alert alert-info'>No Active Service</div>");
+                    }
+
+
+                }
+
+                // here we will handle errors and validation messages
+            });
+    }
+</script>
+
+<script>
+    function logout (){
+
+            //alert("I was clcked");
+            localStorage.removeItem('authuser');
+            window.location.href="/login.html";
+    }
+</script>
+</body>
+
+</html>
+

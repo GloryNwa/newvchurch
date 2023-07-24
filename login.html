@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="img/vlogo.PNG" sizes="32x32">
+    <link rel="apple-touch-icon" href="img/vlogo.PNG">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Dmitry Volkov">
+    <title>Virtual Church</title>
+
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="header__content">
+            <div class="header__logo">
+
+            </div>
+
+
+
+            <div class="header__actions">
+                <div class="header__action header__action--search">
+                    <button class="header__action-btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"/></svg></button>
+                </div>
+
+                <div class="header__action header__action--signin">
+                    <a class="header__action-btn header__action-btn--signin open-modal" href="#modal-wallet">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,7H18V6a3,3,0,0,0-3-3H5A3,3,0,0,0,2,6H2V18a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V10A3,3,0,0,0,19,7ZM5,5H15a1,1,0,0,1,1,1V7H5A1,1,0,0,1,5,5ZM20,15H19a1,1,0,0,1,0-2h1Zm0-4H19a3,3,0,0,0,0,6h1v1a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V8.83A3,3,0,0,0,5,9H19a1,1,0,0,1,1,1Z"/></svg>
+                        <span>Admin Login</span>
+                    </a>
+                </div>
+            </div>
+
+            <button class="header__btn" type="button">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+        </div>
+    </header>
+    <!-- end header -->
+
+    <!-- main content -->
+    <main class="main">
+        <div class="container">
+            <div class="row row--grid">
+                <!-- breadcrumb -->
+
+                <!-- end breadcrumb -->
+
+                <!-- sign in -->
+                <div class="col-12">
+                    <div class="sign">
+                        <div class="sign__content">
+                            <!-- authorization form -->
+                            <div action="#" class="sign__form">
+                                <a class="sign__logo">
+                                    <img src="img/vlogo.PNG" alt="">
+                                </a>
+
+                                <div class="sign__group">
+                                    <input type="email" class="sign__input" id="email" name="email" placeholder="your email">
+                                </div>
+
+                                <div class="sign__group">
+                                    <input type="number" class="sign__input" min="" placeholder="participants" value="" id="part">
+                                </div>
+
+
+
+                                <button class="sign__btn" type="submit" id="login_btn">Login</button>
+
+
+                                <span class="sign__text">Don't have an account? <a href="/register.html">Join a Church!</a></span>
+
+                            </div>
+                            <!-- end authorization form -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end sign in -->
+            </div>
+        </div>
+    </main>
+    <!-- end main content -->
+
+    <!-- footer -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106770506-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-106770506-2');
+    </script>
+
+    <!-- end modal wallet -->
+
+    <!-- JS -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/smooth-scrollbar.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/vanta.waves.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // NProgress.start();
+
+        var userData = JSON.parse(localStorage.getItem('authuser'));
+
+
+        if (userData != null && userData != "") {
+
+            window.location.href = "/index.html"
+        }
+
+        $('#login_btn').click(function(e) {
+
+            e.preventDefault;
+            var email = $("#email").val();
+            var participants = $("#part").val();
+
+            if (email != "" && participants != "") {
+
+                if (isNaN(participants)) {
+
+                    $("#message_div").notify("You need to enter a number", {
+                        className: 'error',
+                        autoHide: true,
+                    });
+                    $("#login_btn").html("Login")
+
+                } else {
+
+                    $("#login_btn").html("... Logging you in")
+
+
+                    var formData = {
+
+                        'email': email,
+                        'groupAttendance': participants,
+                    };
+
+
+                    $.ajax({
+                        type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                        url: 'https://api.cevirtualchurch.org/auth/login', // the url where we want to POST
+                        data: formData,
+                        //dataType    : 'json', // what type of data do we expect back from the server
+                        encode: true
+                    })
+
+
+                    // using the done promise callback
+                    .done(function(data) {
+
+
+                        if (data.status) {
+
+                            const datar = {
+                                status: data.status,
+                                user: data.data
+                            }
+
+
+                            //store logged in user
+                            localStorage.setItem('authuser', JSON.stringify(datar));
+                            localStorage.setItem('app_version', 2.1);
+
+                            //store login data stamp
+                            var today = new Date();
+                            var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+                            localStorage.setItem('loginstamp', date);
+
+                            var intendeds = localStorage.getItem('intended');
+                            // alert("I got here");
+
+                            console.log(intendeds)
+
+                            if (intendeds == null || intendeds == "") {
+
+                                window.location.href = "/index.html"
+
+
+
+                            } else {
+
+                                localStorage.removeItem('intended');
+                                window.location.href = intendeds;
+
+
+                            }
+
+
+
+
+                        } else {
+
+                            //alert("false")
+                            NProgress.done();
+
+                            $("#message_div").notify(data.message, {
+                                className: 'error',
+                                autoHide: false,
+                            });
+                            $("#login_btn").html("Login")
+                        }
+
+                        // here we will handle errors and validation messages
+                    });
+
+
+
+                }
+            } else {
+
+                $("#message_div").notify("All fields are required", {
+                    className: 'error',
+                    autoHide: true,
+                });
+                $("#login_btn").html("Login")
+
+            }
+        })
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+
+
+        var msg = getUrlParameter('msg');
+        if (msg != "") {
+            $("#message_div").html(msg)
+        }
+    </script>
+</body>
+
+</html>

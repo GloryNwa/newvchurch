@@ -1,0 +1,3 @@
+.done(function(data) { if (data.status) { var obj = ""; obj += "
+<option value=''>Please Select your Church</option>"; for (var i = 0; i < data.data.churches.length; i++) { obj +="<option value='" + data.data.churches[i].share_code + "'>" + data.data.churches[i].name + "</option >"; } var final='<div class="class="sign__input"" style="margin-bottom: 15px;"> <label '
+    + 'for="country">Select your Church</label><select onchange="selectChurchCode()" ' + 'class="sign__input selecboxdiv" required ' + 'id="churches_div">' + obj + '</select></div>'; $( "#churcheslist").html(final); }
