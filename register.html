@@ -339,6 +339,15 @@
 
                                 <input type="hidden" id="share_code" value="">
 
+                                <div class="sign__group sign__group--checkbox">
+                                    <div class="check-box-wrap">
+                                        <div class="input-box">
+                                            <input type="checkbox" id="fruit4" name="fruit-4" value="Strawberry" required>
+                                            <label for="fruit4" style="color:white"> By signing up, you are agreeing to our privacy policy.
+                                            For more details, click here to read about our updated privacy Policy</label>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <button class="sign__btn" type="submit" id="reg_btn">Create Account</button>
 
@@ -627,7 +636,7 @@
                         obj += "<option value='" + data.data.zones[i].zoneID + "'>" + data.data.zones[i].name + "</option >";
                     }
 
-                    var final = '<div class="sign__input"> <select onchange="loadChurchZone()" class="selecboxdiv sign__input" required ' +
+                    var final = '<div class="sign__input"> <select onchange="loadChurchZone()" class="sign__group sign__group--checkbox" required ' +
                         'id="zones_div">' + obj + '</select></div>'
 
                     $("#zonallist").html(final);
@@ -750,7 +759,7 @@
                         }
 
                         var final = '<div class="sign__input"><select onchange="selectChurchCode()" ' +
-                            'class="sign__input selecboxdiv" required ' +
+                            'class="sign__group sign__group--checkbox" required ' +
                             'id="churches_div">' + obj + '</select></div>';
 
 

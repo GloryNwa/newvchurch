@@ -77,43 +77,43 @@
                     <div class="sign">
                         <div class="sign__content">
                             <!-- authorization form -->
-                            <div action="#" class="sign__form">
+                            <form action="#" class="sign__form">
                                 <a class="sign__logo">
                                     <img src="img/vlogo.PNG" alt="">
                                 </a>
+                                <div class="fromTitle" align="center">
+                                    <h2 style="color:white">Change Church</h2>
+                                    <p id="message_div" class="alert alert-warning" style="color:white">Note: You will only be allowed to change your church once.</p>
+                                </div>
+                                <div class="sign__group">
+                                    <input type="text" class="sign__input" id="full_name" name="full_name" placeholder="Full Name.." disabled>
+                                </div>
 
                                 <div class="sign__group">
-                                    <input type="text" class="sign__input" id="full_name" name="email" placeholder="Your email here.." disabled>
+                                    <input type="email" class="sign__input" id="email" name="email" placeholder="Email.." disabled>
                                 </div>
 
-                                <div class="sign__group">
-                                    <input type="email" class="sign__input" id="email" name="email" placeholder="Your email here.." disabled>
-                                </div>
-
-
-                                <div id="zonallist">
+                                <div class="sign__group" id="zonallist">
 
                                 </div>
 
-                                <div id="churcheslist">
-
+                                <div class="sign__group" id="churcheslist">
                                 </div>
                                 <input type="hidden" id="share_code" value="">
 
-                                <div class="col-lg-12 col-md-12 col-12">
+
+                                <div class="sign__group sign__group--checkbox">
                                     <div class="check-box-wrap">
                                         <div class="input-box">
                                             <input type="checkbox" id="fruit4" name="fruit-4" value="Strawberry" required>
-                                            <label for="fruit4"> Are you sure you want to change church?</label>
+                                            <label for="fruit4" style="color:white"> Are you sure you want to change church?</label>
                                         </div>
                                     </div>
                                 </div>
-
-                                <button class="sign__btn" type="submit" id="reg_btn">Submit</button>
-                            </div>
-
-
-
+                                <div class="sign__group sign__group--checkbox">
+                                    <button class="sign__btn" type="submit" id="reg_btn">Submit</button>
+                                </div>
+                            </form>
 
                         </div>
                         <!-- end authorization form -->
@@ -337,8 +337,7 @@
                         obj += "<option value='" + data.data.zones[i].zoneID + "'>" + data.data.zones[i].name + "</option >";
                     }
 
-                    var final = '<div class="sign__input" style="margin-bottom: 15px;"> <label ' +
-                        'for="country">Select your Zone</label><select onchange="loadChurchZone()" class="sign__group" required ' +
+                    var final = '<div class="sign__input"><select onchange="loadChurchZone()" class="sign__group sign__group--checkbox" required ' +
                         'id="zones_div" required>' + obj + '</select></div>'
 
                     $("#zonallist").html(final);
@@ -409,9 +408,8 @@
                             obj += "<option value='" + data.data.churches[i].churchID + "'>" + data.data.churches[i].name + "</option >";
                         }
 
-                        var final = '<div class="col-lg-12 col-md-12 col-12" style="margin-bottom: 15px;"> <label ' +
-                            'for="country">Select your Church</label><select onchange="selectChurchCode()" ' +
-                            'class="form-control" required ' +
+                        var final = '<div class="sign__input"><select onchange="selectChurchCode()" ' +
+                            'class="sign__group sign__group--checkbox" required ' +
                             'id="churches_div">' + obj + '</select></div>';
 
 
@@ -437,11 +435,6 @@
 
         }
     </script>
-
-
-
-
-
 </body>
 
 </html>
